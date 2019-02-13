@@ -1,4 +1,4 @@
-from run import db
+from main import db
 from passlib.hash import pbkdf2_sha256 as sha256
 
 class UserModel(db.Model):
@@ -15,6 +15,7 @@ class UserModel(db.Model):
     def find_by_username(cls, username):
         return cls.query.filter_by(username=username).first()
 
+
     @classmethod
     def return_all(cls):
         def to_json(x):
@@ -23,6 +24,7 @@ class UserModel(db.Model):
                 'password': x.password
             }
         return {'users': list(map(lambda x: to_json(x), UserModel.query.all()))}
+
 
     @classmethod
     def delete_all(cls):
