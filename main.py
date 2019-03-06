@@ -33,6 +33,7 @@ api = Api(app)
 
 import models, resources
 api.add_resource(resources.UserRegistration, '/register')
+api.add_resource(resources.Homepage, '/')
 api.add_resource(resources.UserLogin, '/login')
 api.add_resource(resources.UserLogoutAccess, '/logout/access')
 api.add_resource(resources.UserLogoutRefresh, '/logout/refresh')

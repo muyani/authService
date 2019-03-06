@@ -108,3 +108,7 @@ class SecretResource(Resource):
         return {
             'answer': 42
         }
+
+class Homepage(Resource):
+    def get(self):
+        return {'Message':'This is a private api'},200
