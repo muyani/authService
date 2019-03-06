@@ -15,6 +15,7 @@ app.config['SECRET_KEY'] = 'some-secret-string'
 db = SQLAlchemy(app)
 
 app.config['JWT_BLACKLIST_ENABLED'] = True
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False
 app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
 app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
 jwt = JWTManager(app)
