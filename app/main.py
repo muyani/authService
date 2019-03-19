@@ -6,7 +6,7 @@ import os
 import sentry_sdk
 sentry_sdk.init("https://fa58d7aeb71d48caa3ff6b42ae3fb59d@sentry.io/1393298")
 
-DB_URL = 'postgresql://postgres:123@127.0.0.1:5432/authService'
+DB_URL = 'postgresql://postgres:123@142.93.225.175:5432/authService'
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
