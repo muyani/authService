@@ -3,10 +3,7 @@ from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
 import os
-import sentry_sdk
-sentry_sdk.init("https://fa58d7aeb71d48caa3ff6b42ae3fb59d@sentry.io/1393298")
 
-DB_URL = 'postgresql://postgres:123@127.0.0.1:5432/postgres'
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
@@ -15,8 +12,7 @@ app.config['SECRET_KEY'] = 'some-secret-string'
 db = SQLAlchemy(app)
 
 app.config['JWT_BLACKLIST_ENABLED'] = True
-app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
-app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
+app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'app.conrefresh']
 jwt = JWTManager(app)
 
 @app.before_first_request
